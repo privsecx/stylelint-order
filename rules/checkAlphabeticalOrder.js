@@ -31,5 +31,11 @@ module.exports = function checkAlphabeticalOrder(firstPropData, secondPropData) 
 		return true;
 	}
 
+	if (firstPropData.name.match(/^-styled-mixin\d+$/) ||
+		secondPropData.name.match(/^-styled-mixin\d+$/)
+	) {
+		return true;
+	}
+
 	return firstPropData.unprefixedName < secondPropData.unprefixedName;
 };
